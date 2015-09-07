@@ -10,5 +10,8 @@ public class IndexController extends Controller {
 		render("index.html");
 		renderNull();
 	}
+	public void login(){
+		
+	}
 }
 

@@ -5,6 +5,8 @@ package com.edu.run;
 
 //import com.demo.blog.BlogController;
 import com.edu.index.IndexController;
+import com.edu.index.UserController;
+import com.edu.model.User;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
 import com.jfinal.config.Interceptors;
@@ -37,6 +39,7 @@ public class EduConfig extends JFinalConfig {
 
 		me.add("/", IndexController.class, "/index");	// 第三个参数为该Controller的视图存放路径
 	//	me.add("/blog", BlogController.class);			// 第三个参数省略时默认与第一个参数值相同，在此即为 "/blog"
+		me.add("/user",UserController.class);
 	}
 	
 	/**
@@ -51,6 +54,7 @@ public class EduConfig extends JFinalConfig {
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(c3p0Plugin);
 		me.add(arp);
 		//arp.addMapping("blog", Blog.class);	// 映射blog 表到 Blog模型
+		arp.addMapping("edu_user", User.class);
 	}
 	
 	/**
